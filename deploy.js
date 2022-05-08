@@ -30,7 +30,8 @@ function transferProjectToRemote(failed, successful) {
       validate: function(itemPath) {
         const baseName = path.basename(itemPath);
         return (
-          baseName.substr(0, 1) !== '.' && baseName !== 'node_modules' // do not allow dot files
+        //   baseName.substr(0, 1) !== '.' && 
+          baseName !== 'node_modules' // do not allow dot files
         ); // do not allow node_modules
       },
       tick: function(localPath, remotePath, error) {
@@ -85,9 +86,9 @@ function sshConnect() {
   ssh
     .connect({
       // TODO: ADD YOUR IP ADDRESS BELOW (e.g. '12.34.5.67')
-      host: '52.23.158.142',
+      host: '184.73.30.151',
       username: 'ubuntu',
-      privateKey: 'hs-key1.pem'
+      privateKey: 'hs-key.pem'
     })
     .then(function() {
       console.log('SSH Connection established.');
